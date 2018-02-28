@@ -19,9 +19,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import javax.jws.WebService;
+//import javax.jws.WebMethod;
+//import javax.jws.WebParam;
+//import javax.jws.WebService;
 import java.util.*;
 
 import javax.ejb.Stateless;

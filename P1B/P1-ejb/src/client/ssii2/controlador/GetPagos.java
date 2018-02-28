@@ -20,16 +20,25 @@ import ssii2.visa.PagoBean;
 import ssii2.visa.VisaDAOWS;
 import java.util.*;
 
-import ssii2.visa.VisaDAOWSService; // Stub generado automáticamente
-import ssii2.visa.VisaDAOWS; // Stub generado automáticamente
+//import ssii2.visa.VisaDAOWSService; // Stub generado automáticamente
+//import ssii2.visa.VisaDAOWS; // Stub generado automáticamente
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.*;
+
+// Cambios Ejercicio 2
+import javax.ejb.EJB;
+import ssii2.visa.VisaDAOLocal;
+
 /**
  *
  * @author phaya
  */
 public class GetPagos extends ServletRaiz {
      
+    // Cambios Ejercicio 2
+    @EJB(name="VisaDAOBean", beanInterface=VisaDAOLocal.class)
+    private VisaDAOLocal dao;
+
     /** 
      * Par&aacute;metro que indica el identificador de comercio
      */
@@ -53,14 +62,6 @@ public class GetPagos extends ServletRaiz {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {        
         
-		//VisaDAO dao = new VisaDAO();
-		VisaDAOWSService service = new VisaDAOWSService();
-        VisaDAOWS dao = service.getVisaDAOWSPort();
-
-        BindingProvider bp = (BindingProvider) dao;
-        bp.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY,
-            getServletContext().getInitParameter("webmaster"));
-
 		/* Se recoge de la petici&oacute;n el par&aacute;metro idComercio*/  
 		String idComercio = request.getParameter(PARAM_ID_COMERCIO);
 		
