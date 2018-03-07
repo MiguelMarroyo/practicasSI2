@@ -17,12 +17,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import ssii2.visa.PagoBean;
-import ssii2.visa.VisaDAOWS;
 
 //import ssii2.visa.VisaDAOWSService; // Stub generado automáticamente
 //import ssii2.visa.VisaDAOWS; // Stub generado automáticamente
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.*;
+
+// Cambios Ejercicio 2
+import javax.ejb.EJB;
+import ssii2.visa.VisaDAOLocal;
+
 /**
  *
  * @author phaya

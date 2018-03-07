@@ -17,7 +17,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import ssii2.visa.PagoBean;
-import ssii2.visa.VisaDAOWS;
 import java.util.*;
 
 //import ssii2.visa.VisaDAOWSService; // Stub generado automáticamente
@@ -66,12 +65,8 @@ public class GetPagos extends ServletRaiz {
 		String idComercio = request.getParameter(PARAM_ID_COMERCIO);
 		
 		/* Petici&oacute;n de los pagos para el comercio */
-        List<PagoBean> listapagos = new ArrayList<PagoBean>();
-		listapagos = dao.getPagos(idComercio);
-
-        PagoBean[] pagos = new PagoBean[listapagos.size()];
-        pagos = listapagos.toArray(pagos);
-
+        PagoBean[] pagos = dao.getPagos(idComercio);
+        
         request.setAttribute(ATTR_PAGOS, pagos);
         reenvia("/listapagos.jsp", request, response);
         return;       

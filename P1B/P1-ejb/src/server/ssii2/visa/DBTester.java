@@ -14,7 +14,6 @@ import javax.jws.WebService;
  *
  * @author jaime
  */
-@WebService
 public class DBTester {
 
     // Información de conexión
@@ -113,7 +112,6 @@ public class DBTester {
     /**
      * @return the pooled
      */
-    @WebMethod(operationName = "isDirectConnection")
     public boolean isDirectConnection() {
         return directConnection;
     }
@@ -121,8 +119,7 @@ public class DBTester {
     /**
      * @param directConnection valor de conexión directa o indirecta
      */
-    @WebMethod(operationName = "setDirectConnection")
-    public void setDirectConnection(@WebParam(name = "directConnection") boolean directConnection) {
+    public void setDirectConnection(boolean directConnection) {
         this.directConnection = directConnection;
     }
 
