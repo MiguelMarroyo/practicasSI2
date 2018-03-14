@@ -22,7 +22,6 @@ import java.util.ArrayList;
 //import javax.jws.WebMethod;
 //import javax.jws.WebParam;
 //import javax.jws.WebService;
-import java.util.*;
 
 import javax.ejb.Stateless;
 
@@ -214,6 +213,7 @@ public class VisaDAOBean extends DBTester implements VisaDAOLocal {
         // Comprobar id.transaccion - si no existe,
         // es que la tarjeta no fue comprobada
         if (pago.getIdTransaccion() == null) {
+
             return null; // CAMBIO 1
         }
 
@@ -305,11 +305,11 @@ public class VisaDAOBean extends DBTester implements VisaDAOLocal {
             }
         }
 
-        if(ret){
-            return pago;
+        if(ret == false){
+            return null;
         }
 
-        return null;
+        return pago;
     }
 
 
